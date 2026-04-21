@@ -1,0 +1,55 @@
+<div class="dashboard-container">
+
+  <div class="header d-flex justify-content-between align-items-center py-10 px-20">
+    <span>Dashboard</span>
+    <span class="d-flex align-items-center gap-6" (click)="logout()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+        <polyline points="16 17 21 12 16 7" />
+        <line x1="21" y1="12" x2="9" y2="12" />
+      </svg>
+      Sign Out
+    </span>
+  </div>
+
+  <div class="content px-20 py-20 d-flex flex-column gap-20">
+
+    <span class="section-title">Overview</span>
+
+    <div class="charts-row d-flex gap-20">
+      <div class="card flex-1">
+        <span class="card-title">Donut Chart</span>
+        <canvas baseChart [data]="donutData" [options]="donutOptions" type="doughnut"></canvas>
+      </div>
+      <div class="card flex-1">
+        <span class="card-title">Bar Chart</span>
+        <canvas baseChart [data]="barData" [options]="barOptions" type="bar"></canvas>
+      </div>
+    </div>
+
+    <span class="section-title">User List</span>
+
+    <div class="card p-0 table-wrapper">
+      <table class="user-table w-100">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>User Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.username }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

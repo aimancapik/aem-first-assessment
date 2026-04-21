@@ -1,0 +1,79 @@
+.dashboard-container {
+  background: #fff;
+  min-height: 100vh;
+}
+
+.header {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+  font-weight: 600;
+  color: #cccc;
+  cursor: pointer;
+
+  span:last-child {
+    color: #cccc;
+    &:hover { color: #e53935; }
+  }
+}
+
+.section-title {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  padding: 16px;
+
+  canvas {
+    height: 250px !important;
+    width: 100% !important;
+  }
+
+  .card-title {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    background: #f7f7f7;
+    padding: 10px;
+    margin: -16px -16px 16px -16px;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #d0d0d0;
+  }
+}
+
+.p-0 { padding: 0; }
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.user-table {
+  border-collapse: collapse;
+  min-width: 500px;
+
+  th, td {
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+  }
+
+  th {
+    background: #f9f9f9;
+    font-weight: 500;
+    color: #666;
+    font-size: 13px;
+  }
+
+  td { color: #555; }
+
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #fafafa; }
+}

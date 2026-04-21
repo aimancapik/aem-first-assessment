@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('aem-first-assessment');
   });
 
-  it('should render title', () => {
+  it('should render router outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('aem-first-assessment app is running!');
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 });
