@@ -17,7 +17,20 @@
 
     <span class="section-title">Overview</span>
 
-    <div class="charts-row d-flex gap-20">
+    <!-- Skeleton: charts -->
+    <div *ngIf="isLoading" class="charts-row d-flex gap-20">
+      <div class="card flex-1 skeleton-card">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-chart"></div>
+      </div>
+      <div class="card flex-1 skeleton-card">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-chart"></div>
+      </div>
+    </div>
+
+    <!-- Real: charts -->
+    <div *ngIf="!isLoading" class="charts-row d-flex gap-20">
       <div class="card flex-1">
         <span class="card-title">Donut Chart</span>
         <canvas baseChart [data]="donutData" [options]="donutOptions" type="doughnut"></canvas>
@@ -30,7 +43,19 @@
 
     <span class="section-title">User List</span>
 
-    <div class="card p-0 table-wrapper">
+    <!-- Skeleton: table -->
+    <div *ngIf="isLoading" class="card p-0 table-wrapper">
+      <div class="skeleton-table">
+        <div class="skeleton skeleton-row"></div>
+        <div class="skeleton skeleton-row"></div>
+        <div class="skeleton skeleton-row"></div>
+        <div class="skeleton skeleton-row"></div>
+        <div class="skeleton skeleton-row"></div>
+      </div>
+    </div>
+
+    <!-- Real: table -->
+    <div *ngIf="!isLoading" class="card p-0 table-wrapper">
       <table class="user-table w-100">
         <thead>
           <tr>

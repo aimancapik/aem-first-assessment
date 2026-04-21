@@ -30,6 +30,7 @@ export class OverviewComponent implements OnInit {
   };
 
   users: any[] = [];
+  isLoading = true;
 
   constructor(
     private authService: AuthService,
@@ -59,8 +60,12 @@ export class OverviewComponent implements OnInit {
         };
 
         this.users = res.tableUsers;
+        this.isLoading = false;
       },
-      error: (err) => console.error('dashboard error:', err)
+      error: (err) => {
+        console.error('dashboard error:', err);
+        this.isLoading = false;
+      }
     });
   }
 

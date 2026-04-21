@@ -48,6 +48,43 @@
   }
 }
 
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #e8e8e8 25%, #f5f5f5 50%, #e8e8e8 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 4px;
+}
+
+.skeleton-card {
+  border: 1px solid #d0d0d0;
+}
+
+.skeleton-title {
+  height: 36px;
+  margin: -16px -16px 16px -16px;
+  border-radius: 5px 5px 0 0;
+}
+
+.skeleton-chart {
+  height: 250px;
+}
+
+.skeleton-table {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-row {
+  height: 40px;
+}
+
 .p-0 { padding: 0; }
 
 .table-wrapper {
