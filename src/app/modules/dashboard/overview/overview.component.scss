@@ -85,6 +85,12 @@
   height: 40px;
 }
 
+.charts-row {
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
 .p-0 { padding: 0; }
 
 .table-wrapper {
